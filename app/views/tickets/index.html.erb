@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Listing tickets</h1>
+
+  <%= link_to 'New Ticket', new_ticket_path %>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>Section</th>
+        <th>Link</th>
+        <th>Local</th>
+        <th>Asking</th>
+        <th>#</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tickets.order('asking DESC').each do |ticket| %>
+        <% if ticket.sold %>
+          <tr class="danger">
+        <% else %>
+          <tr>
+        <% end %>
+        <td><%= ticket.location.area %></td>
+        <td><%= ticket.section %></td>
+        <td><%= link_to "post", ticket.link %></td>
+        <td><%= ticket.local ? 'Yes' : '' %></td>
+        <td>$<%= number_with_precision(ticket.asking, :precision => 0) %></td>
+        <td><%= ticket.number %></td>
+        <td><%= link_to 'Show', ticket %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>

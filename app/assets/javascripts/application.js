@@ -30,3 +30,7 @@
 
 //= require app
 //= require_tree .
+
+$(document).ready(function(){
+    $('/index.html.erb').DataTable();
+});

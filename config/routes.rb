@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :locations
+
+  resources :tickets
+
   # Load angular app from this route.
   root 'home#index'
 

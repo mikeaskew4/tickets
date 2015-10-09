@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @ticket.location_id %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @ticket.section %>
+</p>
+
+<p>
+  <strong>Row:</strong>
+  <%= @ticket.row %>
+</p>
+
+<p>
+  <strong>Seat:</strong>
+  <%= @ticket.seat %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @ticket.link %>
+</p>
+
+<p>
+  <strong>Local:</strong>
+  <%= @ticket.local %>
+</p>
+
+<p>
+  <strong>Asking:</strong>
+  <%= @ticket.asking %>
+</p>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>
